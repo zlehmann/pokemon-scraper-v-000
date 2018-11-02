@@ -19,7 +19,7 @@ class Pokemon
   end
 
   def self.hp
-    @db.execute("SELECT hp FROM pokemon;")
+    @db.execute("SELECT hp FROM pokemon").flatten.first
   end
 
   def alter_hp(new_hp, db)
