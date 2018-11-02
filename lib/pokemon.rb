@@ -14,7 +14,7 @@ class Pokemon
   end
 
   def self.find(id, db)
-    binding.pry
+    #binding.pry
     result = db.execute("SELECT * FROM pokemon WHERE pokemon.id = id;")
     Pokemon.save(result[0][1], result[0][2], db)
   end
