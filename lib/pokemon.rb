@@ -19,6 +19,10 @@ class Pokemon
     new_pokemon = Pokemon.new(id: result[0][0], name: result[0][1], type: result[0][2], db: db)
   end
 
+  def self.hp
+    @hp
+  end
+
   def alter_hp(new_hp, db)
     db.execute("UPDATE pokemon SET hp = #{new_hp} WHERE pokemon.id = #{self.id};")
     binding.pry
