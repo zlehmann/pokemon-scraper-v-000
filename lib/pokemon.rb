@@ -17,6 +17,6 @@ class Pokemon
     #binding.pry
     result = db.execute("SELECT * FROM pokemon WHERE pokemon.id = id;")
     binding.pry
-    Pokemon.save(result[0][1], result[0][2], db)
+    Pokemon.new(id: result[0][0], name: result[0][1], type: result[0][2], db: db)
   end
 end
