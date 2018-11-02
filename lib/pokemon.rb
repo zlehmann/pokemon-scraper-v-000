@@ -14,13 +14,11 @@ class Pokemon
   end
 
   def self.find(id, db)
-    #binding.pry
     result = db.execute("SELECT * FROM pokemon WHERE pokemon.id = id;")
-    #binding.pry
     new_pokemon = Pokemon.new(id: result[0][0], name: result[0][1], type: result[0][2], db: db)
   end
 
   def self.alter_hp(hp, db)
-    db.execute_alter_table_migration.sql
+    db.execute("UPDATE pokemon SET pokemon.hp = hp WHERE pokemon.id = self.id;")
   end
 end
