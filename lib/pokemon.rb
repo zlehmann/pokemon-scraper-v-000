@@ -19,7 +19,7 @@ class Pokemon
   end
 
   def alter_hp(new_hp, db)
-    db.execute_alter_table_migration
+    db.execute_alter_table_migration_sql
     db.execute("UPDATE pokemon SET hp = #{new_hp};")
   end
 end
