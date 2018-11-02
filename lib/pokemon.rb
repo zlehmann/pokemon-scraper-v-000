@@ -19,7 +19,7 @@ class Pokemon
   end
 
   def self.hp
-    @hp
+    @db.execute("SELECT hp FROM pokemon;")
   end
 
   def alter_hp(new_hp, db)
