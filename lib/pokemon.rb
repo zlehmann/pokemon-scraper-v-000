@@ -19,4 +19,8 @@ class Pokemon
     #binding.pry
     new_pokemon = Pokemon.new(id: result[0][0], name: result[0][1], type: result[0][2], db: db)
   end
+
+  def self.alter_hp(hp, db)
+    db.execute_alter_table_migration.sql
+  end
 end
